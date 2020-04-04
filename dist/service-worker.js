@@ -1,18 +1,37 @@
 importScripts("precache-manifest.8dbe0101a9cf89113ac3181a45f26a9b.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-self.addEventListener('install', (event) => {
-    console.log('Version installing', event);
- 
+  self.addEventListener('install', function(event) {
+    self.skipWaiting();
+    
+    var offlinePage = new Request('offline.html');
     event.waitUntil(
-        caches.open("static-v1").then(
-            /*cache => cache.add("https://kaiyouhu.github.io/TMESIS/dist/img/TMESIS-logo.35b33ef8.png"*/))
-});
- 
-self.addEventListener('activate', (event) => {
-    console.log('Version now ready to handle',event);
-});
- 
-self.addEventListener("fetch", event => {
-    const url = new URL(event.request.url);
-    console.log('fetch', event.request);
-})
+    fetch(offlinePage).then(function(response) {
+      return caches.open('offline2').then(function(cache) {
+        return cache.put(offlinePage, response);
+      });
+    }));
+  }); self.addEventListener('fetch', function(event) {
+    event.respondWith(
+      fetch(event.request).catch(function(error) {
+          return caches.open('offline2').then(function(cache) {
+            return cache.match('offline.html');
+        });
+      }));
+  }); self.addEventListener('refreshOffline', function(response) {
+    return caches.open('offline2').then(function(cache) {
+      return cache.put(offlinePage, response);
+    });
+  }); self.addEventListener('push', function (event) {
+    var data = event.data.json();   var opts = {
+      body: data.body,
+      icon: data.icon,
+      data: {
+        url: data.url
+      }
+    };
+    event.waitUntil(self.registration.showNotification(data.title, opts));
+  }); self.addEventListener('notificationclick', function(event) {
+    var data = event.notification.data;   event.notification.close();   event.waitUntil(
+      clients.openWindow(data.url)
+    );
+  });
