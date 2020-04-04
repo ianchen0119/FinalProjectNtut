@@ -7,6 +7,9 @@ module.exports = {
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
+    manifestOptions:{
+      start_url: 'https://ianchen0119.github.io/FinalProjectNtut/dist/'
+    },
     // configure the workbox plugin
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
