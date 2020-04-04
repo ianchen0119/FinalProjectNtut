@@ -4,7 +4,7 @@ import { register } from 'register-service-worker'
 
 if (process.env.NODE_ENV === 'production') {
   // register(`${process.env.BASE_URL}service-worker.js`, {
-    register(`https://raw.githubusercontent.com/ianchen0119/FinalProjectNtut/master/dist/service-worker.js?token=AKFPJF52PVF4QSYQVKBQ2XK6SFXUS`, {
+    register(`https://ianchen0119.github.io/FinalProjectNtut/dist/service-worker.js`, {
     ready () {
       console.log(
         'App is being served from cache by a service worker.\n' +
