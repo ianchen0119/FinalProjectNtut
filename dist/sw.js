@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.eeacbfb49807c3c9f1e1a8b3d13c52e6.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.18ac1f62445088ab981a0d89c4508f4e.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 self.addEventListener('install', (event) => {
     console.log('Version installing', event);

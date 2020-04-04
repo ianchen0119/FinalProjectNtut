@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: './',
   // lintOnSave: false,
   pwa: {
     name: '北科監控雲',
@@ -13,7 +14,7 @@ module.exports = {
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
-    start_url: 'http://localhost:8080/#/',
+    start_url: 'https://ianchen0119.github.io/FinalProjectNtut/dist/',
     // configure the workbox plugin
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
