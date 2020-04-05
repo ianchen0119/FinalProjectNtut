@@ -58,10 +58,15 @@ export default {
     }  
   },
   async created(){
+      this.init();
       await this.checkout();
       this.getList();
   },
   methods:{
+      init(){
+          let footer = document.querySelector('.footer');
+          footer.style.display = 'block';
+        },
       getList(){
           apiUserMycourse({ params:{
                 account: `${this.$store.state.account}`

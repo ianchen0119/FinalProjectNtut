@@ -33,6 +33,7 @@
     
     
     <router-view></router-view>
+
     <Footer/>
   </div>
 </template>
@@ -69,9 +70,9 @@ export default {
   // margin-top: 60px;
 }
 .footer{
-  position:absolute;
-  bottom: 0;
+  position: absolute;
+  bottom: 0%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,0%);
 }
 </style>

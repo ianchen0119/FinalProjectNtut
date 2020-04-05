@@ -35,6 +35,7 @@ export default {
     msg: String
   },
   created(){
+    this.init();
     this.getList();
     this.checkout();
   },
@@ -49,6 +50,10 @@ export default {
 				};
       },
   methods:{
+        init(){
+          let footer = document.querySelector('.footer');
+          footer.style.display = 'block';
+        },
         async checkout(){
               if(this.$store.state.login==false){
                   await alert("請先登入！")
@@ -100,7 +105,7 @@ export default {
 			}
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 		.person{
 			border-radius: 25px;
 			border: 1px solid #888;
@@ -123,5 +128,5 @@ export default {
       }
     }
     }
-    
+
 </style>
