@@ -24,6 +24,9 @@
       </div>
     </div>
     <div class="col-sm-6 col-12">
+      <div class="card__title">
+        <h3>天氣預報</h3>
+      </div>
       <iframe src="https://ianchen0119.github.io/taiwanweather/"  frameborder="0"></iframe>
     </div>
   </div>

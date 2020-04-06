@@ -2,7 +2,7 @@ module.exports = {
   publicPath: './',
   // lintOnSave: false,
   pwa: {
-    name: '北科監控雲',
+    name: '北科雲監控',
     themeColor: '#4DBA87',
     msTileColor: '#000000',
     appleMobileWebAppCapable: 'yes',
