@@ -41,6 +41,7 @@ export default {
   },
   data(){
 				return{
+          selected:false,
           listLoading:true,
           listData:null,
 					loading:true,
@@ -94,8 +95,14 @@ export default {
           .finally(() => (this.loading = false));
           },
           start(courseNumber){
-            this.student = "";
-            this.setAjax(courseNumber)
+            if(this.selected == true){
+              alert("你已經選定課程，請稍等！");
+            }
+            else{
+              this.student = "";
+              this.setAjax(courseNumber);
+              this.selected = true;
+            }
           },
           setAjax(courseNumber){
               this.t = setInterval(() => {

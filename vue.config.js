@@ -8,7 +8,7 @@ module.exports = {
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions:{
-      start_url: 'https://ianchen0119.github.io/FinalProjectNtut/dist/'
+      start_url: 'https://liaojack.asuscomm.com/mobile/'
     },
     // configure the workbox plugin
     workboxPluginMode: 'InjectManifest',

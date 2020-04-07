@@ -40,12 +40,19 @@ export default {
     msg: String
   },
   created(){
+    this.checkout();
     this.init();
   },
   methods:{
     init(){
       let footer = document.querySelector('.footer');
       footer.style.display = 'none';
+    },
+    async checkout(){
+      if(this.$store.state.login==false){
+        await alert("請先登入！")
+        this.$router.push('/Login');
+          }
     }
   }
 }
