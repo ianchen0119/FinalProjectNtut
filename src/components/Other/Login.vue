@@ -38,7 +38,7 @@ export default {
                     alert("帳號或密碼錯誤！")
                     // console.log(res);
                 }
-                else if(res.data.permit == 2){
+                else if(res.data.permit !== 1){
                     alert("尚未開放教師使用！")
                 }
                 else{
