@@ -24,6 +24,7 @@ export default new Vuex.Store({
             state.account = null
             state.permit = null
             state.name = null
+            alert('您已成功登出！')
         }
     }
 })
