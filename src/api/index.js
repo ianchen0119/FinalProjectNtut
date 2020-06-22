@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const va = axios
 const AppDomain = axios.create({
-    baseURL: 'https://liaojack.asuscomm.com:8088/http://liaojack.asuscomm.com:3000/' //your api domain
+    baseURL: '' //your api domain
   });
 
   export const apiUserLogin = data => AppDomain.get('/login', data);
